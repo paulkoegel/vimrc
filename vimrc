@@ -73,13 +73,14 @@ colorscheme molokai
 "set guioptions-=T  "remove toolbar
 set smartindent
 set linebreak
-autocmd VimEnter * NERDTree 
+" autocmd VimEnter * NERDTree 
 " autocmd TabEnter * NERDTreeMirror
 
 " NERDTree configuration
 " Increase window size to 35 columns
 let NERDTreeWinSize=30
-let NERDTreeShowHidden = 1
+let NERDTreeWinPos='right'
+" let NERDTreeShowHidden = 1
 " map <F7> to toggle NERDTree window
 nmap <silent> <F7> :NERDTreeToggle<CR>
 
