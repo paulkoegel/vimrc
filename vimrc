@@ -68,7 +68,9 @@ map <C-t><right> :tabn<cr>
 "set mouse=v
 set mouse=a
 set t_Co=256 "enable 256 colors within vim - grey background, proper syntax highlighting etc.
-colorscheme molokai
+colorscheme molokai_losh
+"set noanti "turns off font smoothing (anti-aliasing) - doesn't work in gVim
+"on Ubuntu
 "set guifont=Consolas:h9:cANSI
 "set guioptions-=T  "remove toolbar
 set smartindent
