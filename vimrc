@@ -1,9 +1,65 @@
+call pathogen#runtime_append_all_bundles()
+"call pathogen#helptags()
 let mapleader = ","
 set nocompatible
 "source $VIMRUNTIME/vimrc_example.vim
 
+" open up my ~/.vimrc file in a vertically split window so I can add new
+" things to it on the fly
+"nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+" reload vimrc while vim is running
+"nnoremap <leader>vr :source $MYVIMRC<cr>
+
+",v brings up my .vimrc
+"",V reloads it -- making all changes active (have to save first)
+nnoremap <leader>v :tabnew $MYVIMRC<cr>
+nnoremap <leader>V :source $MYVIMRC<cr>
+
+" move by display lines
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up> gk
+nnoremap <S-Down> vgj
+nnoremap <S-Up> vgk
+vnoremap <S-Down> gj
+vnoremap <S-Up> gk
+vnoremap <Down> gj
+vnoremap <Up> gk
+noremap <Down> gj
+noremap <Up> gk
+inoremap <Down> <C-o>gj
+inoremap <Up> <C-o>gk
+
+" CTRL-A is Select all
+noremap <C-A> gggH<C-O>G
+inoremap <C-A> <C-O>gg<C-O>gH<C-O>G
+cnoremap <C-A> <C-C>gggH<C-O>G
+onoremap <C-A> <C-C>gggH<C-O>G
+snoremap <C-A> <C-C>gggH<C-O>G
+xnoremap <C-A> <C-C>ggVG
+
+
+
+" smart home key for indented lines: go to first non-blank character (not start of line) of display line (not
+" numbered line)
+nnoremap <home> g^
+nnoremap <end> g$
+vnoremap <home> g^
+vnoremap <end> g$
+"alternatively: vg^ to automatically enter visual mode first
+nnoremap <S-home> vg^ 
+nnoremap <S-end> vg$
+inoremap <home> <C-o>g^ 
+inoremap <end> <C-o>g$
+inoremap <S-home> <C-o>vg^ 
+inoremap <S-end> <C-o>vg$
+vnoremap <S-home> g^ 
+vnoremap <S-end> g$
+
 filetype off
-call pathogen#runtime_append_all_bundles()
 syntax on
 filetype plugin indent on
 
@@ -12,7 +68,6 @@ filetype plugin indent on
 "filetype plugin indent on
 
 "if &t_Co > 2 || has("gui_running")
-syntax on
 set hlsearch
 "endif
   
@@ -26,9 +81,7 @@ set encoding=utf-8
 set enc=utf-8
 set fileencodings=utf-8,latin2,latin2
 set ignorecase
-" open up my ~/.vimrc file in a vertically split window so I can add new
-" things to it on the fly
-nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+
 " set fileencodings=ucs-bom,utf-8,latin2,latin1
 "set scrolloff=3
 "set autoindent
@@ -57,13 +110,13 @@ set wrap
 " set colorcolumn=85
 " set list
 " set listchars=tab:?\ ,eol:?
-"map <C-t><z> :tabnew<cr>
-"map <C-t><c> :tabclose<cr>
+
 map <C-t><up> :tabr<cr>
 map <C-t><down> :tabl<cr>
 map <C-t><left> :tabp<cr>
 map <C-t><right> :tabn<cr>
-
+map <C-t><z> :tabnew<cr>
+map <C-t><c> :tabclose<cr>
 
 "set mouse=v
 set mouse=a
@@ -84,7 +137,7 @@ let NERDTreeWinSize=30
 let NERDTreeWinPos='right'
 " let NERDTreeShowHidden = 1
 " map <F7> to toggle NERDTree window
-nmap <silent> <F7> :NERDTreeToggle<CR>
+nnoremap <silent> <F7> :NERDTreeToggle<CR>
 
 " put all temporary and swap files into a single folder; '//' makes sure swap
 " filenames start with the files' full pathname, this prevents duplicate swap
@@ -94,30 +147,6 @@ set directory=~/.vim_backups//
 
 " set breakindent "requires vim patch =(
 
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
-nnoremap <Down> gj
-nnoremap <Up> gk
-vnoremap <Down> gj
-vnoremap <Up> gk
-inoremap <Down> <C-o>gj
-inoremap <Up> <C-o>gk
-
-" CTRL-A is Select all
-noremap <C-A> gggH<C-O>G
-inoremap <C-A> <C-O>gg<C-O>gH<C-O>G
-cnoremap <C-A> <C-C>gggH<C-O>G
-onoremap <C-A> <C-C>gggH<C-O>G
-snoremap <C-A> <C-C>gggH<C-O>G
-xnoremap <C-A> <C-C>ggVG
-
-",v brings up my .vimrc
-"",V reloads it -- making all changes active (have to save first)
-
-map ,v :sp /home/eery/.vimrc<CR><C-W>_
-"map <silent> ,V :source /home/eery/.vimrc<CR>:filetype detect<CR>:exe! ":echo 'vimrc reloaded'"<CR>
 
 "set diffexpr=MyDiff()
 "function MyDiff()
