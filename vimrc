@@ -15,6 +15,9 @@ set nocompatible
 nnoremap <leader>v :tabnew $MYVIMRC<cr>
 nnoremap <leader>V :source $MYVIMRC<cr>
 
+" LustyJuggler buffer switcher
+nnoremap <silent> <Leader>j :LustyJuggler<CR>
+
 " move by display lines
 nnoremap j gj
 nnoremap k gk
@@ -34,14 +37,12 @@ inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 
 " CTRL-A is Select all
-noremap <C-A> gggH<C-O>G
+noremap  <C-A> gggH<C-O>G
 inoremap <C-A> <C-O>gg<C-O>gH<C-O>G
 cnoremap <C-A> <C-C>gggH<C-O>G
 onoremap <C-A> <C-C>gggH<C-O>G
 snoremap <C-A> <C-C>gggH<C-O>G
 xnoremap <C-A> <C-C>ggVG
-
-
 
 " smart home key for indented lines: go to first non-blank character (not start of line) of display line (not
 " numbered line)
@@ -52,10 +53,10 @@ vnoremap <end> g$
 "alternatively: vg^ to automatically enter visual mode first
 nnoremap <S-home> vg^ 
 nnoremap <S-end> vg$
-inoremap <home> <C-o>g^ 
-inoremap <end> <C-o>g$
-inoremap <S-home> <C-o>vg^ 
-inoremap <S-end> <C-o>vg$
+inoremap <home> <C-O>g^
+inoremap <end> <C-O>g$
+inoremap <S-home> <C-O>vg^ 
+inoremap <S-end> <C-O>vg$
 vnoremap <S-home> g^ 
 vnoremap <S-end> g$
 
