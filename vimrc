@@ -17,6 +17,7 @@ nnoremap <leader>V :source $MYVIMRC<cr>
 
 " LustyJuggler buffer switcher
 nnoremap <silent> <Leader>j :LustyJuggler<CR>
+nnoremap <leader>a :Ack
 
 " move by display lines
 nnoremap j gj
