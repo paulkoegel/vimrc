@@ -17,7 +17,21 @@ nnoremap <leader>V :source $MYVIMRC<cr>
 
 " LustyJuggler buffer switcher
 nnoremap <silent> <Leader>j :LustyJuggler<CR>
-nnoremap <leader>a :Ack
+nnoremap <leader>a :Rgrep 
+
+nnoremap <C-^> :q<CR>
+
+" shortcut for hash rocket
+imap <C-q> <Space>=><Space>
+" convert word into ruby symbol
+imap <C-k> <C-o>b:<Esc>Ea
+nmap <C-k> lbi:<Esc>E
+
+" automatically cd into directory of file you've opened in current buffer
+autocmd BufEnter * lcd %:p:h
+" cd NERDTree into folder of currently opened file
+map <leader>r :NERDTreeFind<cr>
+
 
 " move by display lines
 nnoremap j gj
@@ -139,6 +153,7 @@ let NERDTreeWinSize=30
 let NERDTreeWinPos='right'
 " let NERDTreeShowHidden = 1
 " map <F7> to toggle NERDTree window
+inoremap <silent> <F7> <C-O>:NERDTreeToggle<CR> 
 nnoremap <silent> <F7> :NERDTreeToggle<CR>
 
 " put all temporary and swap files into a single folder; '//' makes sure swap
