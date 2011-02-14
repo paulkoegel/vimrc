@@ -2,6 +2,39 @@ call pathogen#runtime_append_all_bundles()
 "call pathogen#helptags()
 let mapleader = ","
 set nocompatible
+
+" Format of GUI tab label
+function! GuiTabLabel()
+  " add the tab number
+  let label = '['.tabpagenr().']'
+
+  " modified since the last save?
+  let buflist = tabpagebuflist(v:lnum)
+  for bufnr in buflist
+    if getbufvar(bufnr, '&modified')
+      let label .= '*'
+      break
+    endif
+  endfor
+ 
+  " count number of open windows in the tab
+  "let wincount = tabpagewinnr(v:lnum, '$')
+  "if wincount > 1
+    "let label .= ', '.wincount
+  "endif
+  "let label .= '] '
+
+  " add the file name without path information
+  let n = bufname(buflist[tabpagewinnr(v:lnum) - 1])
+  let label .= fnamemodify(n, ':t')
+
+  return label
+endfunction
+
+set guitablabel=%{GuiTabLabel()}
+
+set showtabline=2                   "Always show tab bar
+
 "source $VIMRUNTIME/vimrc_example.vim
 
 " open up my ~/.vimrc file in a vertically split window so I can add new
@@ -28,7 +61,7 @@ imap <C-k> <C-o>b:<Esc>Ea
 nmap <C-k> lbi:<Esc>E
 
 " automatically cd into directory of file you've opened in current buffer
-autocmd BufEnter * lcd %:p:h
+"autocmd BufEnter * lcd %:p:h
 " cd NERDTree into folder of currently opened file
 map <leader>r :NERDTreeFind<cr>
 
@@ -141,11 +174,21 @@ colorscheme molokai_losh
 "set noanti "turns off font smoothing (anti-aliasing) - doesn't work in gVim
 "on Ubuntu
 "set guifont=Consolas:h9:cANSI
-"set guioptions-=T  "remove toolbar
+set gfn=Monospace\ 11
+"set guifont=Monospace:h12:cANSI
+set guioptions-=T  "remove toolbar
 set smartindent
 set linebreak
-" autocmd VimEnter * NERDTree 
-" autocmd TabEnter * NERDTreeMirror
+autocmd VimEnter * NERDTree 
+autocmd BufEnter * NERDTreeMirror
+"autocmd TabEnter * NERDTreeMirror
+nnoremap <C-t> :tabnew<CR>
+inoremap <C-t> :tabnew<CR>
+vnoremap <C-t> :tabnew<CR>
+"shortcut for next tab
+map <C-e> gt 
+" previous tab
+"map <C-e> gT
 
 " NERDTree configuration
 " Increase window size to 35 columns
