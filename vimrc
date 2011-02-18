@@ -33,7 +33,8 @@ endfunction
 
 set guitablabel=%{GuiTabLabel()}
 
-set showtabline=2                   "Always show tab bar
+"Always show tab bar
+set showtabline=2
 
 "source $VIMRUNTIME/vimrc_example.vim
 
