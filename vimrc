@@ -26,6 +26,14 @@ function! GuiTabLabel()
 
   " add the file name without path information
   let n = bufname(buflist[tabpagewinnr(v:lnum) - 1])
+  " for NERDTrees on the right
+  if n == 'NERD_tree_1'
+    let n = bufname(buflist[tabpagewinnr(v:lnum) - 2])
+  endif
+  " just in case your NERDTree's on the left
+  if n == 'NERD_tree_1'
+    let n = bufname(buflist[tabpagewinnr(v:lnum)])
+  endif
   let label .= fnamemodify(n, ':t')
 
   return label
@@ -210,7 +218,7 @@ set directory=~/.vim_backups//
 map <silent><C-S-Right> :execute TabRight()<CR>
 map <silent><C-S-Left>  :execute TabLeft()<CR>
 
-function TabLeft()
+function! TabLeft()
    let tab_number = tabpagenr() - 1
    if tab_number == 0
       execute "tabm" tabpagenr('$') - 1
@@ -219,7 +227,7 @@ function TabLeft()
    endif
 endfunction
 
-function TabRight()
+function! TabRight()
    let tab_number = tabpagenr() - 1
    let last_tab_number = tabpagenr('$') - 1
    if tab_number == last_tab_number
