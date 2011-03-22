@@ -4,6 +4,8 @@ let mapleader = ","
 set nocompatible
 
 " Format of GUI tab label
+set guitablabel=%{GuiTabLabel()}
+
 function! GuiTabLabel()
   " add the tab number
   let label = '['.tabpagenr().']'
@@ -26,11 +28,12 @@ function! GuiTabLabel()
 
   " add the file name without path information
   let n = bufname(buflist[tabpagewinnr(v:lnum) - 1])
+  " BUGFIX for tab names 'NERD_tree_1', when NERDTree is active
   " for NERDTrees on the right
   if n == 'NERD_tree_1'
     let n = bufname(buflist[tabpagewinnr(v:lnum) - 2])
   endif
-  " just in case your NERDTree's on the left
+  " for NERDTrees on the left
   if n == 'NERD_tree_1'
     let n = bufname(buflist[tabpagewinnr(v:lnum)])
   endif
@@ -39,9 +42,7 @@ function! GuiTabLabel()
   return label
 endfunction
 
-set guitablabel=%{GuiTabLabel()}
-
-"Always show tab bar
+" Always show tab bar - fixes maximize window & hide status bar bug in Ubuntu
 set showtabline=2
 
 "source $VIMRUNTIME/vimrc_example.vim
