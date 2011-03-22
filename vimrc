@@ -31,11 +31,15 @@ function! GuiTabLabel()
   " BUGFIX for tab names 'NERD_tree_1', when NERDTree is active
   " for NERDTrees on the right
   if n == 'NERD_tree_1'
-    let n = bufname(buflist[tabpagewinnr(v:lnum) - 2])
+    if (tabpagewinnr(v:lnum) - 2 >= 0)
+      let n = bufname(buflist[tabpagewinnr(v:lnum) - 2])
+    endif
   endif
   " for NERDTrees on the left
   if n == 'NERD_tree_1'
-    let n = bufname(buflist[tabpagewinnr(v:lnum)])
+    if (tabpagewinnr(v:lnum) <= tabpagewinnr(v:lnum, '$'))
+      let n = bufname(buflist[tabpagewinnr(v:lnum)])
+    endif
   endif
   let label .= fnamemodify(n, ':t')
 
