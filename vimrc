@@ -8,7 +8,7 @@ set guitablabel=%{GuiTabLabel()}
 
 function! GuiTabLabel()
   " add the tab number
-  let label = '['.tabpagenr().']'
+  let label = tabpagenr().']'
 
   " modified since the last save?
   let buflist = tabpagebuflist(v:lnum)
