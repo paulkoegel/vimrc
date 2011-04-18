@@ -1,3 +1,8 @@
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+set colorcolumn=85
+
 call pathogen#runtime_append_all_bundles()
 "call pathogen#helptags()
 let mapleader = ","
@@ -167,10 +172,6 @@ autocmd FileType taglist setlocal nonumber
 
 nnoremap <leader><space> :noh<cr>
 " set undofile
-set wrap
-" set textwidth=79
-" set formatoptions=qrn1
-" set colorcolumn=85
 " set list
 " set listchars=tab:?\ ,eol:?
 
