@@ -1,7 +1,7 @@
-set wrap
-set textwidth=79
-set formatoptions=qrn1
-set colorcolumn=85
+"set wrap
+"set textwidth=79
+"set formatoptions=qrn1
+"set colorcolumn=85
 
 call pathogen#runtime_append_all_bundles()
 "call pathogen#helptags()
