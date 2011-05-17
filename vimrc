@@ -1,3 +1,6 @@
+" (don't uncomment, this functionality is served directly by the plugin, cf. http://www.vim.org/scripts/script.php?script_id=3361)
+" indentation guides: <leader>ig
+
 "set wrap
 "set textwidth=79
 "set formatoptions=qrn1
@@ -13,7 +16,8 @@ set guitablabel=%{GuiTabLabel()}
 
 function! GuiTabLabel()
   " add the tab number
-  let label = tabpagenr().']'
+  " let label = tabpagenr().']'
+  let label = ""
 
   " modified since the last save?
   let buflist = tabpagebuflist(v:lnum)
@@ -189,7 +193,7 @@ colorscheme molokai_losh
 "set noanti "turns off font smoothing (anti-aliasing) - doesn't work in gVim
 "on Ubuntu
 "set guifont=Consolas:h9:cANSI
-set gfn=Monospace\ 11
+set gfn=Monospace\ 10
 "set guifont=Monospace:h12:cANSI
 set guioptions-=T  "remove toolbar
 set smartindent
