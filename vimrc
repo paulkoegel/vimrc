@@ -193,7 +193,7 @@ colorscheme molokai_losh
 "set noanti "turns off font smoothing (anti-aliasing) - doesn't work in gVim
 "on Ubuntu
 "set guifont=Consolas:h9:cANSI
-set gfn=Monospace\ 10
+set gfn=Monospace\ 9
 "set guifont=Monospace:h12:cANSI
 set guioptions-=T  "remove toolbar
 set smartindent
@@ -247,6 +247,10 @@ function! TabRight()
    endif
 endfunction
 
+" vim-color-css
+" g:cssColorVimDoNotMessMyUpdatetime is used when updatetime value set by plugin (100ms) is interfering with your confiduration.
+let g:cssColorVimDoNotMessMyUpdatetime = 1
+
 
 " set breakindent "requires vim patch =(
 
@@ -275,3 +279,5 @@ endfunction
 "  endif
 "  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 "endfunction
+"
+"
