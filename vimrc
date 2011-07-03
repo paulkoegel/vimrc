@@ -6,6 +6,8 @@
 "set formatoptions=qrn1
 "set colorcolumn=85
 
+autocmd BufRead,BufNewFile *.rabl setf ruby
+
 call pathogen#runtime_append_all_bundles()
 "call pathogen#helptags()
 let mapleader = ","
