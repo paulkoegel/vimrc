@@ -6,12 +6,25 @@
 "set formatoptions=qrn1
 "set colorcolumn=85
 
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+" RABL support
 autocmd BufRead,BufNewFile *.rabl setf ruby
 
 call pathogen#runtime_append_all_bundles()
 "call pathogen#helptags()
 let mapleader = ","
 set nocompatible
+
+
+" N E R D T R E E     A U T O L O A D
+" ===================================
+"autocmd VimEnter * NERDTree 
+"autocmd BufEnter * NERDTreeMirror
+"autocmd TabEnter * NERDTreeMirror
+
+
 
 " Format of GUI tab label
 set guitablabel=%{GuiTabLabel()}
@@ -200,16 +213,35 @@ set gfn=Monospace\ 9
 set guioptions-=T  "remove toolbar
 set smartindent
 set linebreak
-autocmd VimEnter * NERDTree 
-autocmd BufEnter * NERDTreeMirror
-"autocmd TabEnter * NERDTreeMirror
+
 nnoremap <C-t> :tabnew<CR>
 inoremap <C-t> :tabnew<CR>
 vnoremap <C-t> :tabnew<CR>
+
+nnoremap <C-C> :vsplit new<CR>
+inoremap <C-C> :vsplit new<CR>
+vnoremap <C-C> :vsplit new<CR>
+
+" SPLITS
+" ======
+" window
+nmap <leader>H  :topleft  vnew<CR>
+nmap <leader>L  :botright vnew<CR>
+nmap <leader>K  :topleft  new<CR>
+nmap <leader>J  :botright new<CR>
+
+" buffer
+nmap <leader>h  :leftabove  vnew<CR>
+nmap <leader>l  :rightbelow vnew<CR>
+nmap <leader>k  :leftabove  new<CR>
+nmap <leader>j  :rightbelow new<CR>
+
+
+
 "shortcut for next tab
 map <C-e> gt 
 " previous tab
-"map <C-e> gT
+map <C-e> gT
 
 " NERDTree configuration
 " Increase window size to 35 columns
