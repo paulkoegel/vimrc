@@ -24,7 +24,7 @@ set nocompatible
 "autocmd BufEnter * NERDTreeMirror
 "autocmd TabEnter * NERDTreeMirror
 
-
+map <leader>u :%!json_xs -f json -t json-pretty<CR>
 
 " Format of GUI tab label
 set guitablabel=%{GuiTabLabel()}
@@ -217,10 +217,6 @@ set linebreak
 nnoremap <C-t> :tabnew<CR>
 inoremap <C-t> :tabnew<CR>
 vnoremap <C-t> :tabnew<CR>
-
-nnoremap <C-C> :vsplit new<CR>
-inoremap <C-C> :vsplit new<CR>
-vnoremap <C-C> :vsplit new<CR>
 
 " SPLITS
 " ======
