@@ -87,7 +87,7 @@ nnoremap <leader>v :tabnew $MYVIMRC<cr>
 nnoremap <leader>V :source $MYVIMRC<cr>
 
 " LustyJuggler buffer switcher
-nnoremap <silent> <Leader>j :LustyJuggler<CR>
+nnoremap <silent> <leader>m :LustyJuggler<CR>
 nnoremap <leader>a :Rgrep 
 
 nnoremap <C-^> :q<CR>
@@ -300,6 +300,8 @@ augroup END
 " CUSTOM
 " ======
 nmap <C-P> :cd ~/open-heart-surgery/heart-chamber<CR>
+"command alias for save saving
+:ca W w 
 
 
 " set breakindent "requires vim patch =(
