@@ -312,7 +312,8 @@ set incsearch " start hihglighting (partial) matches as soon as you start typing
 
 " INDENTATION
 " ===========
-" set breakindent "requires vim patch =( cf. http://jasonanderson.us/articles/perfecting-vim
+" set breakindent "requires vim patch =(
+" set bri " requires vim path, instructions: http://jasonanderson.us/articles/perfecting-vim
 
 
 "set diffexpr=MyDiff()
