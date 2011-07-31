@@ -155,7 +155,7 @@ filetype plugin indent on
 "filetype plugin indent on
 
 "if &t_Co > 2 || has("gui_running")
-set hlsearch
+
 "endif
   
 let g:rubycomplete_rails = 1
@@ -302,9 +302,17 @@ augroup END
 nmap <C-P> :cd ~/open-heart-surgery/heart-chamber<CR>
 "command alias for save saving
 :ca W w 
+nmap <leader>fs :set foldmethod=syntax<CR>
+nmap <leader>fm :set foldmethod=manual<CR>
 
+" SEARCH
+" ------
+set hlsearch " highlight search terms
+set incsearch " start hihglighting (partial) matches as soon as you start typing letters after '/'
 
-" set breakindent "requires vim patch =(
+" INDENTATION
+" ===========
+" set breakindent "requires vim patch =( cf. http://jasonanderson.us/articles/perfecting-vim
 
 
 "set diffexpr=MyDiff()
