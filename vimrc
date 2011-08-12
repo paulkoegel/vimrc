@@ -281,6 +281,23 @@ endfunction
 " g:cssColorVimDoNotMessMyUpdatetime is used when updatetime value set by plugin (100ms) is interfering with your confiduration.
 let g:cssColorVimDoNotMessMyUpdatetime = 1
 
+
+" SYNTASTIC
+" =========
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+"always show status line
+"set laststatus=2
+"set statusline=%<%y\ b%n\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+
+"for Syntastic
+"SyntasticEnable sass
+let g:syntastic_enable_signs=1
+let g:syntastic_quiet_warnings=1
+
+
 " Saving Folds
 " ============
 " cf. http://ebonhand.wordpress.com/2011/03/30/automatically-save-and-load-vim-views-folds/
@@ -300,10 +317,11 @@ augroup END
 " CUSTOM
 " ======
 nmap <C-P> :cd ~/open-heart-surgery/heart-chamber<CR>
+nmap <C-O> :cd ~/lysbon/repo<CR>
 "command alias for save saving
 :ca W w 
-nmap <leader>fs :set foldmethod=syntax<CR>
-nmap <leader>fm :set foldmethod=manual<CR>
+"nmap <leader>fs :set foldmethod=syntax<CR>
+"nmap <leader>fm :set foldmethod=manual<CR>
 
 " SEARCH
 " ------
@@ -315,6 +333,17 @@ set incsearch " start hihglighting (partial) matches as soon as you start typing
 " set breakindent "requires vim patch =(
 " set bri " requires vim path, instructions: http://jasonanderson.us/articles/perfecting-vim
 
+"ALIASES
+"=======
+
+" disable F1
+" ----------
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" quickly switch to normal mode
+inoremap jj <ESC>
 
 "set diffexpr=MyDiff()
 "function MyDiff()
