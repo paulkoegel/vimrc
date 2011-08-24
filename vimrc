@@ -11,6 +11,7 @@ behave mswin
 
 " RABL support
 autocmd BufRead,BufNewFile *.rabl setf ruby
+autocmd BufRead,BufNewFile *.pde setf javascript
 
 call pathogen#runtime_append_all_bundles()
 "call pathogen#helptags()
@@ -284,9 +285,9 @@ let g:cssColorVimDoNotMessMyUpdatetime = 1
 
 " SYNTASTIC
 " =========
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 "always show status line
 "set laststatus=2
@@ -316,7 +317,7 @@ augroup END
 
 " CUSTOM
 " ======
-nmap <C-P> :cd ~/open-heart-surgery/heart-chamber<CR>
+nmap <C-P> :cd ~/open-heart-surgery/thorax<CR>
 nmap <C-O> :cd ~/lysbon/repo<CR>
 "command alias for save saving
 :ca W w 
