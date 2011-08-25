@@ -1,4 +1,4 @@
-" (don't uncomment, this functionality is served directly by the plugin, cf. http://www.vim.org/scripts/script.php?script_id=3361)
+" this is just a reminder (don't uncomment the following line, the keyboard shortcut is served up directly by the plugin, cf. http://www.vim.org/scripts/script.php?script_id=3361)
 " indentation guides: <leader>ig
 
 "set wrap
