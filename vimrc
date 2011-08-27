@@ -200,7 +200,7 @@ map <C-t><down> :tabl<cr>
 map <C-t><left> :tabp<cr>
 map <C-t><right> :tabn<cr>
 map <C-t><z> :tabnew<cr>
-map <C-t><c> :tabclose<cr>
+nmap <C-Delete> :tabclose<CR>
 
 "set mouse=v
 set mouse=a
