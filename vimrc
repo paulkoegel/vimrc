@@ -346,6 +346,10 @@ vnoremap <F1> <ESC>
 " quickly switch to normal mode
 inoremap jj <ESC>
 
+"COMMAND T
+"=========
+nmap <leader>T :CommandTFlush<CR>
+
 "set diffexpr=MyDiff()
 "function MyDiff()
 "  let opt = '-a --binary '
