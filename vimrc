@@ -341,6 +341,11 @@ set incsearch " start hihglighting (partial) matches as soon as you start typing
 "=========
 nmap <leader>T :CommandTFlush<CR>
 
+" MAPPINGS
+" ========
+map <F1> <Esc>
+imap <F1> <Esc>
+
 "set diffexpr=MyDiff()
 "function MyDiff()
 "  let opt = '-a --binary '
