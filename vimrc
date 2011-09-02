@@ -320,10 +320,11 @@ let g:cssColorVimDoNotMessMyUpdatetime = 1
 nmap <C-O> :cd ~/open-heart-surgery/thorax<CR>
 nmap <C-P> :cd ~/open-heart-surgery/heart-chamber<CR>
 nmap <C-I> :cd ~/lysbon/repo<CR>
+
 "command alias for save saving
 :ca W w 
-"nmap <leader>fs :set foldmethod=syntax<CR>
-"nmap <leader>fm :set foldmethod=manual<CR>
+nmap <leader>fs :set foldmethod=syntax<CR>
+nmap <leader>fm :set foldmethod=manual<CR>
 
 " SEARCH
 " ------
@@ -335,17 +336,6 @@ set incsearch " start hihglighting (partial) matches as soon as you start typing
 " set breakindent "requires vim patch =(
 " set bri " requires vim path, instructions: http://jasonanderson.us/articles/perfecting-vim
 
-"ALIASES
-"=======
-
-" disable F1
-" ----------
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
-
-" quickly switch to normal mode
-inoremap jj <ESC>
 
 "COMMAND T
 "=========
