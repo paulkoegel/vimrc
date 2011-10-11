@@ -1,7 +1,16 @@
-VIM CONFIG README:
+VIM CONFIG README
+=================
+
+Clone & set up on your machine
+------------------------------
+$ git clone https://github.com/paulwittmann/vimrc.git
+$ mv vimrc ~/.vim
+$ ln -s ~/.vim/vimrc ~/.vimrc
+$ ln -s ~/.vim/gvimrc ~/.gvimrc
+
 
 Install Log
-===========
+-----------
 
 cf.screencast:
   http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
