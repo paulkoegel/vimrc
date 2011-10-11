@@ -318,8 +318,11 @@ let g:cssColorVimDoNotMessMyUpdatetime = 1
 " CUSTOM
 " ======
 nmap <C-O> :cd ~/open-heart-surgery/thorax<CR>
-nmap <C-P> :cd ~/open-heart-surgery/heart-chamber<CR>
-nmap <C-I> :cd ~/lysbon/repo<CR>
+nmap <C-H> :cd ~/open-heart-surgery/heart-chamber<CR>
+nmap <C-L> :cd ~/lysbon/repo<CR>
+nmap <C-I> :cd ~/irmingard/repo<CR>
+" C-Z is reserved for reset to oldest state
+nmap <C-N> :cd ~/zilino/repo<CR>
 
 "command alias for save saving
 :ca W w 

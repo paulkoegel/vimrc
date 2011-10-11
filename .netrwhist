@@ -1,2 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/eery/.vim'
+let g:netrw_dirhist_2='/home/eery/zilino/repo'
+let g:netrw_dirhist_3='/home/eery/open-heart-surgery/blood-bank/projects'
+let g:netrw_dirhist_4='/home/eery/open-heart-surgery/blood-bank/images/projects/9flats'
+let g:netrw_dirhist_5='/home/eery/open-heart-surgery/thorax/log'
+let g:netrw_dirhist_6='/home/eery/open-heart-surgery/heart-chamber/config'
